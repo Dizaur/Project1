@@ -3,12 +3,10 @@
 using namespace std;
 
 int main() {
-	int N, sec, min, hour, thour, tmin, tsec, one, two;      // 00:00:00 -> hour : tmin min : tsec sec
-	cin >> hour >> min >> sec >> thour >> tmin >> tsec;
-	one = hour * 3600 + min * 60 + sec;
-	two = thour * 3600 + tmin * 60 + tsec;
-	N = two - one;
-	cout << N;
+	int V, T, N; 
+	cin >> V >> T;
+	N = V * T;
+	cout << (109 + N) % 109;
 	return 0;
 }
 /*

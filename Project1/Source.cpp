@@ -3,13 +3,18 @@
 using namespace std;
 
 int main() {
-	int A, B, N, O, Q, W, E;
-	cin >> A >> B >> N;
-	Q = A * N; // rub
-	W = B * N; // cent
-	E = W / 100;
-	O = W % 100;
-	cout << Q + E << " "<< O;
+	int N, sec, tsec, min, tmin, hour, W, E, R, T;      // 00:00:00 -> hour : tmin min : tsec sec
+	cin >> N;
+	hour = (N / 3600);
+	W = (N - hour * 3600);
+	tmin = (W / 60) / 10;
+	E = W - tmin * 60 * 10;
+	min = (E / 60) % 10;
+	R = E - min * 60;
+	tsec = (R % 60) / 10;
+	T = R - tsec * 10;
+	sec = T % 10;
+	cout << hour % 24 << ":" << tmin << min << ":" << tsec << sec;
 	return 0;
 
 }
